@@ -1,13 +1,14 @@
 import React from "react";
 import styles from "./Header.module.css";
 import sushiImg from "../../assets/sushi.jpg";
+import { HeaderCartButton } from "./HeaderCartButton";
 
 export const Header = (props) => {
   return (
     <React.Fragment>
       <header className={styles.header}>
         <h1>Япона Кухня</h1>
-        <button>Корзина</button>
+        <HeaderCartButton />
       </header>
 
       <div className={styles["main-image"]}>
