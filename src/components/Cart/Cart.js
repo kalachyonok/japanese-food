@@ -1,6 +1,7 @@
 import style from "./Cart.module.css";
+import { ModalWindow } from "../UI/ModalWindow";
 
-const Cart = (props) => {
+export const Cart = (props) => {
   const cartItems = (
     <ul className={style["cart - items"]}>
       {[{ id: "m1", name: "Sushi", amount: 2, price: 10.99 }].map((item) => (
@@ -10,7 +11,7 @@ const Cart = (props) => {
   );
 
   return (
-    <div>
+    <ModalWindow>
       {cartItems}
       <div className={style.total}>
         <span>Итого</span>
@@ -21,6 +22,6 @@ const Cart = (props) => {
         <button className={style["button--alt"]}>Закрыть</button>
         <button className={style.button}>Заказать</button>
       </div>
-    </div>
+    </ModalWindow>
   );
 };
