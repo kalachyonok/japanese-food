@@ -11,7 +11,7 @@ export const Cart = (props) => {
   );
 
   return (
-    <ModalWindow>
+    <ModalWindow onCloseCart={props.onCloseCart}>
       {cartItems}
       <div className={style.total}>
         <span>Итого</span>
@@ -19,7 +19,9 @@ export const Cart = (props) => {
       </div>
 
       <div className={style.actions}>
-        <button className={style["button--alt"]}>Закрыть</button>
+        <button className={style["button--alt"]} onClick={props.onCloseCart}>
+          Закрыть
+        </button>
         <button className={style.button}>Заказать</button>
       </div>
     </ModalWindow>

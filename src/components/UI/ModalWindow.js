@@ -3,7 +3,7 @@ import ReactDOM from "react-dom";
 import React from "react";
 
 const Backdrop = (props) => {
-  return <div className={style.backdrop}></div>;
+  return <div className={style.backdrop} onClick={props.onCloseCart}></div>;
 };
 
 const Modal = (props) => {
@@ -17,7 +17,10 @@ const Modal = (props) => {
 export const ModalWindow = (props) => {
   return (
     <React.Fragment>
-      {ReactDOM.createPortal(<Backdrop />, document.getElementById("backdrop"))}
+      {ReactDOM.createPortal(
+        <Backdrop onCloseCart={props.onCloseCart} />,
+        document.getElementById("backdrop")
+      )}
       {ReactDOM.createPortal(
         <Modal>{props.children}</Modal>,
         document.getElementById("modal")
