@@ -5,7 +5,7 @@ import { HeaderCartButton } from "./HeaderCartButton";
 
 export const Header = (props) => {
   return (
-    <React.Fragment>
+    <>
       <header className={styles.header}>
         <h1>Япона Кухня</h1>
         <HeaderCartButton onClick={props.onShowCart} />
@@ -14,6 +14,6 @@ export const Header = (props) => {
       <div className={styles["main-image"]}>
         <img src={sushiImg} alt="блюда японской кухни" />
       </div>
-    </React.Fragment>
+    </>
   );
 };

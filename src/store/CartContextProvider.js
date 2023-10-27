@@ -40,6 +40,7 @@ export const CartContextProvider = (props) => {
     addItem: addItemHandler,
     removeItem: removeItemHandler,
   };
+  // console.log("CartContextProvider  cartContext:", cartContext);
 
   return (
     <CartContext.Provider value={cartContext}>
