@@ -11,8 +11,12 @@ export const Cart = (props) => {
 
   const hasItems = ctx.item.length > 0;
 
-  const removeCartItemHandler = (id) => {};
-  const addCartItemHandler = (item) => {};
+  const removeCartItemHandler = (id) => {
+    ctx.removeItem(id);
+  };
+  const addCartItemHandler = (item) => {
+    ctx.addItem({ ...item, amount: 1 });
+  };
 
   const cartItems = (
     <ul className={style["cart-items"]}>
