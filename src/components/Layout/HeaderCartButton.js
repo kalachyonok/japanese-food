@@ -17,17 +17,15 @@ export const HeaderCartButton = (props) => {
 
   useEffect(() => {
     if (ctx.item.length === 0) {
-      console.log("ctx.item.length === 00");
       return;
     }
-    console.log("ctx.item.length === 01");
+
     setIsButtonAnimated(true);
     const timer = setTimeout(() => {
       setIsButtonAnimated(false);
     }, 300);
 
     return () => {
-      console.log("ctx.item.length === 02");
       clearTimeout(timer);
     };
   }, [ctx.item]);
