@@ -12,9 +12,11 @@ export const Cart = (props) => {
   const hasItems = ctx.item.length > 0;
 
   const removeCartItemHandler = (id) => {
+    console.log("remove");
     ctx.removeItem(id);
   };
   const addCartItemHandler = (item) => {
+    console.log("add");
     ctx.addItem({ ...item, amount: 1 });
   };
 
@@ -23,11 +25,9 @@ export const Cart = (props) => {
       {ctx.item.map((item) => (
         <CartItem
           key={item.id}
-          name={item.name}
-          amount={item.amount}
-          price={item.price}
-          onAdd={addCartItemHandler.bind(null, item)}
-          onRemove={removeCartItemHandler.bind(null, item.id)}
+          item={item}
+          onAdd={addCartItemHandler}
+          onRemove={removeCartItemHandler}
         />
       ))}
     </ul>

@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import { useState } from "react";
 import { CartContextProvider } from "./store/CartContextProvider";
 import { Header } from "./components/Layout/Header";
 import { Meals } from "./components/Meals/Meals";
