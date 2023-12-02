@@ -1,5 +1,5 @@
 import { CartContext } from "./cart-context";
-import { useReducer, useState } from "react";
+import { useState } from "react";
 
 // const defaultCartState = {
 //   items: [],
@@ -114,7 +114,7 @@ export const CartContextProvider = (props) => {
     let newItems;
 
     if (existingCartItem.amount === 1) {
-      newItems = items.filter((food) => food.id != id);
+      newItems = items.filter((food) => food.id !== id);
     } else {
       const updatedItem = {
         ...existingCartItem,
